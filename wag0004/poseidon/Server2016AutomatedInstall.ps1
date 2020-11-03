@@ -15,3 +15,5 @@ Add-DNSServerResourceRecordCName -HostNameAlias hades.wag0004.internal -Name www
 
 #Install IIS
 Install-WindowsFeature -Name Web-Server -IncludeManagementTools
+
+#Get repo files and put the auto install files in the web server directory 
