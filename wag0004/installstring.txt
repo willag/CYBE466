@@ -1,0 +1,1 @@
+initrd=/casper/initrd quiet ---autoinstall net.ifnames=0 biosdevname=0 ip=dhcp ipv6.disable=1 ds=nocloud-naet;s=http://192.168.100.4:80/serve/public/cybe466/autoinstall/

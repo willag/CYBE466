@@ -17,3 +17,12 @@ Add-DNSServerResourceRecordCName -HostNameAlias hades.wag0004.internal -Name www
 Install-WindowsFeature -Name Web-Server -IncludeManagementTools
 
 #Get repo files and put the auto install files in the web server directory 
+
+#Create folders for autoinstall
+New-Item -ItemType Directory -Force -Path 'C:\inetpub\wwwroot\serve\public\cybe466'
+New-Item -ItemType Directory -Force -Path 'C:\inetpub\wwwroot\serve\public\cybe466\autoinstall'
+
+Invoke-WebRequest -URI 'https://github.com/willag/CYBE466/blob/master/wag0004/initrd?raw=true' -OutFile 'C:\inetpub\wwwroot\serve\public\cybe466\initrd'
+Invoke-WebRequest -URI 'https://github.com/willag/CYBE466/blob/master/wag0004/vmlinuz?raw=true' -OutFile 'C:\inetpub\wwwroot\serve\public\cybe466\vmlinuz'
+Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/wag0004/autoinstall/meta-data' -OutFile 'C:\inetpub\wwwroot\serve\public\cybe466\autoinstall\meta-data'
+Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/wag0004/autoinstall/user-data' -OutFile 'C:\inetpub\wwwroot\serve\public\cybe466\autoinstall\user-data'
