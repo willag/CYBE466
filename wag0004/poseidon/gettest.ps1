@@ -1,1 +1,1 @@
-Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/wag0004/hades/hades.yml' -OutFile 'testfolder/test.yml'
+Invoke-WebRequest -URI 'https://github.com/willag/CYBE466/blob/master/wag0004/initrd?raw=true' -OutFile 'testfolder/test.yml'
