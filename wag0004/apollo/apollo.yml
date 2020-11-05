@@ -42,6 +42,7 @@
 
   - name: Create dbuserdatabase
     mysql_db:
+      login_unix_socket: /var/run/mysqld/mysqld.sock
       name: dbuserdatabase
       state: present
   
