@@ -1,0 +1,23 @@
+---
+- hosts: zeus.wag0004.internal
+  become: true
+
+  tasks:
+  - name: Set the hostname
+    hostname:
+      name: zeus
+  
+  - name: Add cybe46grader
+    user:
+      name: cybe466grader
+      password: '$6$r9ATy2aj$KIvT4YCKZlRKJSiWnF4NMsXmOizBXC1P11.JwyCeXrcYh3fBdluhi.p2JFy2rvVjzpiTD9jaNHR.p4RQd.NMm.'
+      groups:
+        - sudo
+      state: present
+      shell: /bin/bash
+
+  - name: Change user password
+    user:
+      name: loud
+      update_password: always
+      password: '$6$mO.q/2M1NUb$bU0zPRwih56kU00QjtiFSLO9uMoqQa6YedJutY0NjUYWPJ6wqGzYh6/GOsAVYyRauh.Zyi6xVlweLzxAAmIg51'
