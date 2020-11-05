@@ -13,6 +13,40 @@
       update_password: always
       password: '$6$mO.q/2M1NUb$bU0zPRwih56kU00QjtiFSLO9uMoqQa6YedJutY0NjUYWPJ6wqGzYh6/GOsAVYyRauh.Zyi6xVlweLzxAAmIg51'
 
+  - name: Enable passwordless sudo 
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^%sudo'
+      line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
+
+  - name: Add dbuser
+    user:
+      name: dbuser
+      password: '$6$v/k7N3Lnk2Kl$BtVVPtwN708qMtmAgbR4M.BqXjBWy4QKmOqibQXHt9S54/dzKiZ5JmXAyuw82u3KQpNJXJ4eDC790RurZKK2g.'
+      state: present
+      shell: /bin/bash
+
+  - name: Install mariadb
+    apt: name=mariadb-server update_cache=yes state=latest
+
+  - name: Install pymysql
+    apt: name=python3-pyMySQL update_cache=yes state=latest
+
+  - name: Create dbuserdatabase
+    mysql_db:
+      name: dbuserdatabase
+      state: present
+  
+  - name: Database user dbuser
+    community.mysql.mysql_user:
+      name: dbuser
+      password: dbuser
+      priv: '*.*:ALL,GRANT'
+      state: present
+
+
   - name: Add cybe46grader
     user:
       name: cybe466grader
