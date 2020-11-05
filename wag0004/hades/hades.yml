@@ -71,6 +71,13 @@
       state: present
       shell: /bin/bash
 
+  - name: Add dbremoteuser
+    user:
+      name: dbremoteuser
+      password: '$6$DRV8qmcvWOwC$UT8Y3dCYLAcJ0u.8xJ.jPdAMD7p2XqQv8Zcfhm7K86yCIwuM1fAmj6kSKpOtxExIhqOVmqvQqS9nBGFtNFEGT0'
+      state: present
+      shell: /bin/bash
+
   handlers:
     - name: Reload Apache
       service:
