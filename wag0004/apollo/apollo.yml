@@ -31,8 +31,14 @@
   - name: Install mariadb
     apt: name=mariadb-server update_cache=yes state=latest
 
+  - name: start mariadb
+    service:
+      name: mariadb
+      enabled: true
+      state: started
+
   - name: Install pymysql
-    apt: name=python3-pyMySQL update_cache=yes state=latest
+    apt: name=python3-pymysql update_cache=yes state=latest
 
   - name: Create dbuserdatabase
     mysql_db:
