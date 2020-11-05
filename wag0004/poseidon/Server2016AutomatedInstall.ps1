@@ -41,6 +41,7 @@ Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/
 Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/wag0004/autoinstall/user-data' -OutFile 'C:\inetpub\wwwroot\serve\public\cybe466\autoinstall\user-data'
 
 #Add cybe466grader account 
+Write-Output "Enter a new password:"
 $Password = Read-Host -AsSecureString
 New-LocalUser "cybe466grader" -Password $Password
 Add-LocalGroupMember -Group "Administrators" -Member "cybe466grader" -PasswordNeverExpires $true
