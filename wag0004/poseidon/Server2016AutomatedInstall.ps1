@@ -4,14 +4,14 @@
 
 Install-WindowsFeature DNS -IncludeManagementTools
 Add-DnsServerForwarder -IPAddress 8.8.8.8 -PassThru
-Add-DnsServerPrimaryZone -Name wag0004.internal
+Add-DnsServerPrimaryZone -Name wag0004.internal -ZoneFile "wag0004.internal.dns"
 
 Install-WindowsFeature DHCP -IncludeManagementTools
 netsh dhcp add securitygroups
 Restart-Service dhcpserver
 Add-DhcpServerv4Scope -Name "DHCP Range" -StartRange 192.168.100.10 -EndRange 192.168.100.20 -SubnetMask 255.255.255.0 -State Active
 Set-DhcpServerv4Scope -ScopeID 192.168.100.0 -LeaseDuration 1.0001:00:00
-SetDhcpServerv4OptionValue -ScopeID 192.168.100.0 -DnsDomain wag0004.internal -DnsServer 192.168.100.4 -Router 192.168.100.1
+Set-DhcpServerv4OptionValue -ScopeID 192.168.100.0 -DnsDomain wag0004.internal -DnsServer 192.168.100.4 -Router 192.168.100.1
 
 #DHCP reservations 
 Add-DHCPServerv4Reservation -ScopeID 192.168.100.0 -IPAddress 192.168.100.3 -ClientID "BE-F1-79-D7-0F-28" -Description "Hades"
