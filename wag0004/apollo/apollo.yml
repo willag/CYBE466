@@ -5,7 +5,7 @@
   tasks:
   - name: Set the hostname
     hostname:
-      name: hades
+      name: apollo
 
   - name: Change user password
     user:
