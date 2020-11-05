@@ -39,6 +39,7 @@ Invoke-WebRequest -URI 'https://github.com/willag/CYBE466/blob/master/wag0004/in
 Invoke-WebRequest -URI 'https://github.com/willag/CYBE466/blob/master/wag0004/vmlinuz?raw=true' -OutFile 'C:\inetpub\wwwroot\serve\public\cybe466\vmlinuz'
 Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/wag0004/autoinstall/meta-data' -OutFile 'C:\inetpub\wwwroot\serve\public\cybe466\autoinstall\meta-data'
 Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/wag0004/autoinstall/user-data' -OutFile 'C:\inetpub\wwwroot\serve\public\cybe466\autoinstall\user-data'
+Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/wag0004/poseidon/web.config' -OutFile 'C:\inetpub\wwwroot\web.config'
 
 #Add cybe466grader account 
 Write-Output "Enter a new password:"
