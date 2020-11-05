@@ -1,9 +1,8 @@
 #Todo
-#Add DNS forwader
-#Add DNS zone
+#
 
 Install-WindowsFeature DNS -IncludeManagementTools
-Add-DnsServerForwarder -IPAddress 8.8.8.8 -PassThru
+Add-DnsServerForwarder -IPAddress 157.182.203.110 -PassThru
 Add-DnsServerPrimaryZone -Name wag0004.internal -ZoneFile "wag0004.internal.dns"
 
 Install-WindowsFeature DHCP -IncludeManagementTools
