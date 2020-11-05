@@ -43,4 +43,4 @@ Invoke-WebRequest -URI 'https://raw.githubusercontent.com/willag/CYBE466/master/
 #Add cybe466grader account 
 $Password = Read-Host -AsSecureString
 New-LocalUser "cybe466grader" -Password $Password
-Add-LocalGroupMember -Group "Administrators" -Member "cybe466grader"
+Add-LocalGroupMember -Group "Administrators" -Member "cybe466grader" -PasswordNeverExpires $true
