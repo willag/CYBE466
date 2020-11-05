@@ -13,6 +13,14 @@
       update_password: always
       password: '$6$mO.q/2M1NUb$bU0zPRwih56kU00QjtiFSLO9uMoqQa6YedJutY0NjUYWPJ6wqGzYh6/GOsAVYyRauh.Zyi6xVlweLzxAAmIg51'
 
+  - name: Enable passwordless sudo 
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^%sudo'
+      line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
+
   - name: Install apache
     apt: name=apache2 update_cache=yes state=latest
 
