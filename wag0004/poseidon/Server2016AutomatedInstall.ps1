@@ -1,5 +1,5 @@
 #Todo
-#
+#Add MIME config file
 
 Install-WindowsFeature DNS -IncludeManagementTools
 Add-DnsServerForwarder -IPAddress 157.182.203.110 -PassThru
