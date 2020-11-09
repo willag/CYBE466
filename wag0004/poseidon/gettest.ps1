@@ -1,1 +1,0 @@
-Invoke-WebRequest -URI 'https://github.com/willag/CYBE466/blob/master/wag0004/initrd?raw=true' -OutFile 'testfolder/test.yml'
