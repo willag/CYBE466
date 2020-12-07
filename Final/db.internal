@@ -1,0 +1,15 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	hades.wag0004.internal. root.wag0004.internal. (
+			      3		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	hades.wag0004.internal
+
+zeus.wag0004.internal.	IN	A	192.168.100.2
+hades.wag0004.internal.	IN	A	192.168.100.3
