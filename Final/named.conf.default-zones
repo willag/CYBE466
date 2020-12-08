@@ -29,5 +29,5 @@ zone "255.in-addr.arpa" {
 
 zone "internal" {
 	type master;
-	file "/etc/bind/db.internal"
+	file "/etc/bind/db.internal";
 };
