@@ -38,6 +38,30 @@ zone "wag0004.internal"{
 	allow-transfer { 192.168.100.2; };
 	allow-notify { 192.168.100.2; };
 };
+
+zone "customer1.internal"{
+	type slave;
+	masters { 192.168.100.2; };
+	file "/var/lib/bind/db.customer1.internal";
+	allow-transfer { 192.168.100.2; };
+	allow-notify { 192.168.100.2; };
+};
+
+zone "customer2.internal"{
+	type slave;
+	masters { 192.168.100.2; };
+	file "/var/lib/bind/db.customer2.internal";
+	allow-transfer { 192.168.100.2; };
+	allow-notify { 192.168.100.2; };
+};
+
+zone "customer3.internal"{
+	type slave;
+	masters { 192.168.100.2; };
+	file "/var/lib/bind/db.customer3.internal";
+	allow-transfer { 192.168.100.2; };
+	allow-notify { 192.168.100.2; };
+};
 zone "_msdcs.wag0004.internal"{
 	type slave;
 	masters { 192.168.100.2; };
