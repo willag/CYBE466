@@ -1,6 +1,4 @@
-#Todo
 #Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-
 
 Add-DnsServerForwarder -IPAddress 157.182.203.110 -PassThru
 
